@@ -1,0 +1,68 @@
+version: '3.9'
+services:
+    flwr_server:
+        build:
+            context: flwr_server
+            target: builder
+        networks:
+            - public
+        ports:
+            - '8080:8080'
+
+    flwr_client_1:
+        build:
+            context: flwr_client
+            target: builder
+        networks:
+            - public
+        ports:
+            - '5001:5000'
+        # depends_on:
+        #     - immudb_1
+
+    flwr_client_2:
+        build:
+            context: flwr_client
+            target: builder
+        networks:
+            - public
+        ports:
+            - '5002:5000'
+    # depends_on:
+    #     - immudb_2
+
+    flwr_client_3:
+        build:
+            context: flwr_client
+            target: builder
+        networks:
+            - public
+        ports:
+            - '5003:5000'
+    # depends_on:
+    #     - immudb_3
+networks:
+    public:
+    # immudb_1:
+    #     image: codenotary/immudb:latest
+    #     restart: always
+    #     volumes:
+    #         - x
+    #     environment:
+    #         - name=value
+
+    # immudb_2:
+    #     image: codenotary/immudb:latest
+    #     restart: always
+    #     volumes:
+    #         - x
+    #     environment:
+    #         - name=value
+
+    # immudb_3:
+    #     image: codenotary/immudb:latest
+    #     restart: always
+    #     volumes:
+    #         - x
+    #     environment:
+    #         - name=value
