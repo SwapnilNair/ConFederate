@@ -3,5 +3,5 @@
 - Zero knowledge transfer betweeen participants, guaranteeing secure handling of sensitive patient information.
 - Built as part of a Hackathon in under 24 hours
 - Currently uses just the MNIST dataset, but has been tested on the Pneumonia Dataset with reasonable success.
-
+- Deployed using Docker and verified with multiple machines on a LAN.
   
